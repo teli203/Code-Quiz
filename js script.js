@@ -70,3 +70,17 @@ function answerIsCorrect(){
 function answerIsWrong(){
     document.getElementById(runningQuestionIndex).style.backgroundColor = "red";
 }
+
+//Counter Render//
+const questionTime = 10; //10 seconds for every question//
+const guageWidth = 150;
+let count = 0;
+const guageProgressUnit = guageWidth/questionTime;
+
+function counterRender(){
+    if( count <= questionTime ){
+        counter.innerHTML = count;
+        timeGauge.style.width = guageProgressUnit * count + "px" ;
+        count++;
+    }
+}
