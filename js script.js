@@ -23,4 +23,21 @@ let question = [
         choiceC :"Cascading Sheets of Style",
         correct : "A"
     },
-]
+    {
+        question : "This questions 2",
+        imgSrc : "img/pictures2.png",
+        choiceA :"The 1st choice",
+        choiceB :"The 2nd choice",
+        choiceC :"The 3rd choice",
+        correct : "C"
+    }
+];
+
+//Questions Rendered//
+array =[a,b,c,d]
+let q =questions[runningQuestions];
+qImg.innerHTML = "<img src=" + q.imgSrc + ">";
+questions.innerHTML = "<p>" + q.questions+ "</p>";
+choiceA.innerHTML = q.choiceA;
+choiceB.innerHTML = q.choiceB;
+choiceC.innerHTML = q.choiceC;
