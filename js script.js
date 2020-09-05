@@ -16,11 +16,11 @@ const scorecontainer = document.getElementById("scorecontainer");
 
 let question = [
     {
-        question : "What does CSS stand for?"
+        question : "What does CSS stand for?",
         imgSrc : "img/html.png",
-        choiceA :"Cascading Style Sheet"
-        choiceB :"Cascading Shoe Site"
-        choiceC :"Cascading Sheets of Style"
+        choiceA :"Cascading Style Sheet",
+        choiceB :"Cascading Shoe Site",
+        choiceC :"Cascading Sheets of Style",
         correct : "A"
     },
 ]
