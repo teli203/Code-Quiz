@@ -43,7 +43,6 @@ questions[0].correct
 array =[a,b,c,d]
 let lastQuestionIndex = questions.length - 1;
 let runningQuestionIndex = 0;
-renderQuestion()
 function renderQuestion(){
 let q =questions[runningQuestions];
 qImg.innerHTML = "<img src=" + q.imgSrc + ">";
@@ -51,4 +50,12 @@ questions.innerHTML = "<p>" + q.questions+ "</p>";
 choiceA.innerHTML = q.choiceA;
 choiceB.innerHTML = q.choiceB;
 choiceC.innerHTML = q.choiceC;
+
+let runningQuestionIndex = 0;
+renderQuestion()
+
+runningQuestionIndex++
+renderQuestion()
+
 }
+
