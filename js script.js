@@ -32,12 +32,23 @@ let question = [
         correct : "C"
     }
 ];
+questions[0].question
+questions[0].imgSrc
+questions[0].choiceA
+questions[0].choiceB
+questions[0].choiceC
+questions[0].correct
 
 //Questions Rendered//
 array =[a,b,c,d]
+let lastQuestionIndex = questions.length - 1;
+let runningQuestionIndex = 0;
+renderQuestion()
+function renderQuestion(){
 let q =questions[runningQuestions];
 qImg.innerHTML = "<img src=" + q.imgSrc + ">";
 questions.innerHTML = "<p>" + q.questions+ "</p>";
 choiceA.innerHTML = q.choiceA;
 choiceB.innerHTML = q.choiceB;
 choiceC.innerHTML = q.choiceC;
+}
