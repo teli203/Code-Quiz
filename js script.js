@@ -82,5 +82,13 @@ function counterRender(){
         counter.innerHTML = count;
         timeGauge.style.width = guageProgressUnit * count + "px" ;
         count++;
+    }else{
+        count = 0;
+        answerIsWrong();
+        if( runningQuestionIndex < lastQuestionIndex){
+            runningQuestionIndex++;
+            questionrender();
+        }else{ clearInterval(TIMER);
+        scoreRender();                          }
     }
 }
