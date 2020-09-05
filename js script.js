@@ -58,4 +58,15 @@ runningQuestionIndex++
 renderQuestion()
 
 }
-
+//Progress Render//
+function progressRender(){
+    for(let qIndex = 0; qIndex <= lastQuestionIndex; qIndex++){
+        progress.innerHTML += "div class='prog'id=" + qIndex + "></div>";
+    }
+}
+function answerIsCorrect(){
+    document.getElementById(runningQuestionIndex).style.backgroundColor = "green"
+}
+function answerIsWrong(){
+    document.getElementById(runningQuestionIndex).style.backgroundColor = "red";
+}
