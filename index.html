@@ -9,7 +9,13 @@
 <div id="container">
     <div id="start">Start Quiz!</div>
     <div id="quiz" style="display: none">
-        <div id="question"></div>
+        <div id="qImage"> <img src="img.png"> </div>
+        <div id="question"> <p> Question <p> </p></div>
+        <div id="timer">
+            <div id="counter"> 6 </div>
+            <div id="btimeGauge"></div>
+            <div id="timeGauge"></div>
+        </div>
         <div id="choices">
             <div class="choice" id="A"
             onclick="checkAnswer('A')"></div>
@@ -25,7 +31,7 @@
         </div>
         <div id="progress"></div>
 </div>
-<div id="score" style="display: none"></div>
+<div id="scoreContainer" style="display: none"></div>
 </div>
 <script src="quiz.js"></script>
 </body>
