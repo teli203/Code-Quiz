@@ -5,3 +5,6 @@ const question = document.getElementById("question");
 const counter = document.getElementById("counter");
 const timeGauge = document.getElementById("timeGauge");
 
+const choiceA = document.getElementById("A");
+const choiceB = document.getElementById("B");
+const choiceC = document.getElementById("C");
