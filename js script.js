@@ -90,5 +90,9 @@ function counterRender(){
             questionrender();
         }else{ clearInterval(TIMER);
         scoreRender();                          }
+        let TIMER =
+            setInterval(counterRender,1000);
+
+        clearInterval(TIMER);
     }
 }
