@@ -151,4 +151,11 @@ function scoreRender(){
     scorecontainer.style.display = "block";
     let scorePerCent = Math.round(100 * score / question.length);
     let img = ( scorePerCent >= 80 ) ? "img/5.png" :
+        ( scorePerCent >= 60 ) ? "img/4.png" :
+        ( scorePerCent >= 40 ) ? "img/3.png" :
+        ( scorePerCent >= 20 ) ? "img/2.png" : "img/1.png" ;
+    
+    scorecontainer.innerHTML = "<img src="+ img + "><p>" + scorePerCent + "%<p>";
+
+
 }
