@@ -103,9 +103,9 @@ function counterRender(){
 function checkAnswer(answer){
     if(questions[runningQuestionIndex].correct== answer){
         score++;
-        answerIsCorrect(); color= "green"
+        answerIsCorrect(); backgroundColor= "green"
     }else{
-        answerIsWrong(); color= "red"
+        answerIsWrong(); backgroundColor= "red"
     }
     if(runningQuestionIndex < lastQuestionIndex){
         count = 0;
