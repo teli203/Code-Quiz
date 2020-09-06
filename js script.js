@@ -130,3 +130,18 @@ function startQuiz(){
     questionRender();
     quiz.style.display = "block";
 }
+//Determine X and Y//
+//if statement//
+if( Y == "one"){
+    X = 1;
+}else {
+    X = 0;
+}
+//else if statement//
+if (Y == "one" ){
+    X = 1;
+}else if (Y == "zero") {
+    X = 0;
+} else {
+    X = 2;
+}
