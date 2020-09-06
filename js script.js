@@ -1,3 +1,4 @@
+//Select all Elements//
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
 const qImg = document.getElementById("questionImage");
@@ -13,34 +14,42 @@ const progress = document.getElementById("progress");
 
 const scorecontainer = document.getElementById("scorecontainer");
 
-
-let question = [
+//create our questions//
+let questions = [
     {
         question : "What does CSS stand for?",
-        imgSrc : "img/html.png",
+        imgSrc : "",
         choiceA :"Cascading Style Sheet",
         choiceB :"Cascading Shoe Site",
         choiceC :"Cascading Sheets of Style",
         correct : "A"
     },
     {
-        question : "This questions 2",
-        imgSrc : "img/pictures2.png",
-        choiceA :"The 1st choice",
-        choiceB :"The 2nd choice",
-        choiceC :"The 3rd choice",
+        question : "What does HTML Stand for?",
+        imgSrc : "",
+        choiceA :"Hyper Text Make Language",
+        choiceB :"Hyper Tool Makeup Ligo",
+        choiceC :"Hyper Text Markup Language",
         correct : "C"
-    }
-];
-questions[0].question
-questions[0].imgSrc
-questions[0].choiceA
-questions[0].choiceB
-questions[0].choiceC
-questions[0].correct
+    },
+    {
+        question :"What does JavaScript do?",
+        imgSrc : "",
+        choiceA :"It dynamically modify HTML and CSS to update a user interface",
+        choiceB :"Just a random file",
+        choiceC :"A script of numbers only file",
+        correct : "A"
+    },
+
+questions[0].question,
+questions[0].imgSrc,
+questions[0].choiceA,
+questions[0].choiceB,
+questions[0].choiceC,
+questions[0].correct,
 
 //Questions Rendered//
-array =[a,b,c,d]
+array =[a,b,c,d];
 let lastQuestionIndex = questions.length - 1;
 let runningQuestionIndex = 0;
 function renderQuestion(){
@@ -71,16 +80,18 @@ function answerIsWrong(){
     document.getElementById(runningQuestionIndex).style.backgroundColor = "red";
 }
 
-//Counter Render//
+//renderCounter//
+let count
 const questionTime = 10; //10 seconds for every question//
-const guageWidth = 150;
+const guageWidth = 150; //150px
+const guageUnit = guageWidth / questionTime;
 let count = 0;
 const guageProgressUnit = guageWidth/questionTime;
 
-function counterRender(){
+function renderCounter(){
     if( count <= questionTime ){
         counter.innerHTML = count;
-        timeGauge.style.width = guageProgressUnit * count + "px" ;
+        timeGauge.style.width = count * guageUnit;
         count++;
     }else{
         count = 0;
