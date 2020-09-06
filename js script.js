@@ -145,3 +145,10 @@ if (Y == "one" ){
 } else {
     X = 2;
 }
+
+//Score Render//
+function scoreRender(){
+    scorecontainer.style.display = "block";
+    let scorePerCent = Math.round(100 * score / question.length);
+    let img = ( scorePerCent >= 80 ) ? "img/5.png" :
+}
