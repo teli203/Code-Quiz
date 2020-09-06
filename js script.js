@@ -96,3 +96,24 @@ function counterRender(){
         clearInterval(TIMER);
     }
 }
+
+//Check Answer//
+<div class="choice" id="A" onclick="check answer('A')">A</div>
+
+function checkAnswer(answer){
+    if(questions[runningQuestionIndex].correct== answer){
+        score++;
+        answerIsCorrect(); color= "green"
+    }else{
+        answerIsWrong(); color= "red"
+    }
+    if(runningQuestionIndex < lastQuestionIndex){
+        count = 0;
+        runningQuestionIndex++;
+        questionRender();
+    }else{
+        clearInterval(TIMER);
+
+        scoreRender();
+    }
+}
