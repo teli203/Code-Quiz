@@ -125,4 +125,8 @@ start.addEventListener("click", startQuiz );
 function startQuiz(){
     start.style.display = "none";
     counterRender();
+    TIMER = setInterval(counterRender,1000);
+    progressRender();
+    questionRender();
+    quiz.style.display = "block";
 }
