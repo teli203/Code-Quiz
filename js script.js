@@ -91,7 +91,7 @@ const guageProgressUnit = guageWidth/questionTime;
 function renderCounter(){
     if( count <= questionTime ){
         counter.innerHTML = count;
-        timeGauge.style.width = count * guageUnit;
+        timeGauge.style.width = count * guageUnit + "px";
         count++;
     }else{
         count = 0;
