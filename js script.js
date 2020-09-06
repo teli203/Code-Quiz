@@ -117,3 +117,12 @@ function checkAnswer(answer){
         scoreRender();
     }
 }
+//Start Quiz//
+const start = document.getElementById("start");
+
+start.addEventListener("click", startQuiz );
+
+function startQuiz(){
+    start.style.display = "none";
+    counterRender();
+}
