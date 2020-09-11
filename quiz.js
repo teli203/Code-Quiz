@@ -1,7 +1,6 @@
 //Select all Elements//
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
-const qImg = document.getElementById("questionImage");
 const question = document.getElementById("question");
 const counter = document.getElementById("counter");
 const timeGauge = document.getElementById("timeGauge");
@@ -17,25 +16,22 @@ const scorecontainer = document.getElementById("scorecontainer");
 //create our questions//
 let questions = [
     {
-        question : "What does HTML stand for?",
-        imgSrc : "img/html.png",
-        choiceA : "Correct",
-        choiceB : "Wrong",
-        choiceC : "Wrong",
+        question : "What does CSS stand for?",
+        choiceA : "Cascading Style Sheet",
+        choiceB : "Correct Spread Sheet",
+        choiceC : "Computer Spread Sheet",
         correct : "A"
     },{
-        question : "What does CSS stand for?",
-        imgSrc : "img/css.png",
-        choiceA : "Wrong",
-        choiceB : "Correct",
-        choiceC : "Wrong",
+        question : "What does HTML stand for?",
+        choiceA : "Home Talk Makeup Language",
+        choiceB : "Hyper Text Markup Language",
+        choiceC : "Hyper Text Makeup Language",
         correct : "B"
     },{
-        question : "What does JS stand for?",
-        imgSrc : "img/js.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
+        question : "What does javascript make better?",
+        choiceA : "Web browser",
+        choiceB : "Typing",
+        choiceC : "HTML & CSS",
         correct : "C"
     }
 ];
@@ -54,7 +50,6 @@ function renderQuestion (){
     let q = questions[runningQuestion];
 
     question.HTML = "<p>"+ q.question +"</p>";
-    qImg.innerHTML = "<img src="+ q.imgSrc +">";
     choiceA.innerHTML = q.choiceA;
     choiceB.innerHTML = q.choiceB;
     choiceC.innerHTML = q.choiceC;
@@ -78,3 +73,70 @@ function renderProgress(){
         progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
     }
 }
+
+// counter render
+
+function renderCounter(){
+    if(count <= questionTime){
+        counter.innerHTML = count;
+        timeGauge.style.width = count * gaugeUnit + "px";
+        count++
+    }else{
+        count = 0;
+        // change progress color to red
+        answerIsWrong();
+        if(runningQuestion < lastQuestion){
+            runningQuestion++;
+            renderQuestion();
+        }else{
+            // end the quiz and show the score
+            clearInterval(TIMER);
+            scoreRender();
+        }
+    }
+}
+
+// checkAnwer
+
+function checkAnswer(answer){
+    if( answer == questions[runningQuestion].correct){
+        // answer is correct
+        score++;
+        // change progress color to green
+        answerIsCorrect();
+    }else{
+        // answer is wrong
+        // change progress color to red
+        answerIsWrong();
+    }
+    count = 0;
+    if(runningQuestion < lastQuestion){
+        runningQuestion++;
+        renderQuestion();
+    }else{
+        // end the quiz and show the score
+        clearInterval(TIMER);
+        scoreRender();
+    }
+}
+
+// answer is correct
+function answerIsCorrect(){
+    document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
+}
+
+// answer is Wrong
+function answerIsWrong(){
+    document.getElementById(runningQuestion).style.backgroundColor = "#f00";
+}
+
+// score render
+function scoreRender(){
+    scoreDiv.style.display = "block";
+    
+    // calculate the amount of question percent answered by the user
+    const scorePerCent = Math.round(100 * score/questions.length);
+    scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
+}
+
+
