@@ -40,18 +40,19 @@ let questions = [
         choiceC :"A script of numbers only file",
         correct : "A"
     },
-
-questions[0].question,
-questions[0].imgSrc,
-questions[0].choiceA,
-questions[0].choiceB,
-questions[0].choiceC,
-questions[0].correct,
+],
+// questions[0].question;
+// questions[0].imgSrc,
+// questions[0].choiceA,
+// questions[0].choiceB,
+// questions[0].choiceC,
+// questions[0].correct,
 
 //Questions Rendered//
 array =[a,b,c,d];
-let lastQuestionIndex = questions.length - 1;
-let runningQuestionIndex = 0;
+let lastQuestionIndex = questions.length -1;
+let runningQuestionIndex = 0,
+
 function renderQuestion(){
 let q =questions[runningQuestions];
 qImg.innerHTML = "<img src=" + q.imgSrc + ">";
@@ -66,7 +67,7 @@ renderQuestion()
 runningQuestionIndex++
 renderQuestion()
 
-}
+};
 //Progress Render//
 function progressRender(){
     for(let qIndex = 0; qIndex <= lastQuestionIndex; qIndex++){
